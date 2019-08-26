@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+<!--#include file="footer_text.html" -->
+
+{% block task%}
+<center>
+<form method="POST" class="post-form" action="task">
+        {% csrf_token %}
+    <br>
+    <textarea type="text" placeholder="Title..." rows="1" cols="100" name="sub" ></textarea><br><br>
+    <textarea rows="12" cols="100" placeholder="Discription....." name="dis"></textarea><br><br>
+    <pre>starting date:<input type="date" name="start_date" >      ending date:<input type="date" name="end_date" ></pre>
+    <center><button type="submit" class="btn btn-success">Add task</button></center>
+</form></center>
+{% endblock task %}

@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block editInvoice %}
+<center>
+<form method="POST" class="post-form" action="/updateInvoice/{{ task.id }}">
+        {% csrf_token %}
+
+<br>
+
+    <center><h3>Update Details</h3></center>
+
+
+    <pre>    Order Number:<input type="text" id="id_OrderNumber" name="OrderNumber" value="{{ task.OrderNumber }}">                                                 Invoice Number:<input type="text" name="InvoiceNumber" value="{{ task.InvoiceNumber }}" id="id_InvoiceNumber"></pre>
+    Product Name:<textarea rows="2" cols="100" name="ProductName" id="id_ProductName">{{ task.ProductName }}</textarea><br>
+    <pre>Product Id:<input type="text" name="ProductId" value="{{ task.ProductId }}" id="id_ProductId">    Quantity/kg:<input type="text" name="Quality" value="{{ task.Quality }}" id="id_Quality"></pre><br>
+    Price:<input type="text" name="Price" value="{{ task.Price }}" id="id_Price">
+    Size:
+    <select name="Size" id="id_Size">
+        <option value="select">Select</option>
+        <option value="s">s</option>
+        <option value="m">m</option>
+        <option value="l">l</option>
+        <option value="xl">xl</option>
+        <option value="xxl">xxl</option>
+    </select><br>
+
+    <pre>   User Full Name:<input type="text" name="UserFullName" value="{{ task.UserFullName }}" id="id_UserFullName">    Email:<input type="email" name="Email" value="{{ task.Email }}" id="id_Email">    Contact Number:<input type="text" name="ContactNumber" value="{{ task.ContactNumber }}" id="id_ContactNumber"></pre>
+
+    Address: <textarea rows="2" cols="120" name="Address" id="id_Address" >{{ task.Address }}</textarea>
+    <pre>Shipping User Full Name:<input type="text" name="ShippingUserFullName" value="{{ task.ShippingUserFullName }}" id="id_ShippingUserFullName">           Shipping User Contact No.:<input type="text" name="ShippingUserContactNumber" value="{{ task.ShippingUserContactNumber }}" id="id_ShippingUserContactNumber"></pre>
+    <pre>City:<input type="type" name="City" value="{{ task.City }}" id="id_City">     Country:<input type="text" name="Country" value="{{ task.Country }}" id="id_Country"></pre>
+    Zip Code:<input type="text" name="ZipCode" value="{{ task.ZipCode }}" id="id_ZipCode"><br>
+    <pre>Client GST:<input type="text" name="ClientGst" value="{{ task.ClientGst }}" id="id_ClientGst">        Mod Of Payment:<input type="text" name="ModOfPayment" value="{{ task.ModOfPayment }}" id="id_ModeOfPayment"></pre><br>
+    <pre>Date and Time:<input type="date" name="Date" value="{{ task.Date }}" id="id_Date">           Shipping Cost:<input type="text" name="ShippingCost" value="{{ task.ShippingCost }}" id="id_ShippingCost"></pre><br>
+    <button type="submit" class="btn btn-success">Update</button>
+
+</form>
+</center>
+{% endblock editInvoice %}

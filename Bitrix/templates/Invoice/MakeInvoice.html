@@ -1,0 +1,35 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block invoice %}
+<center>
+<h1>Invoice</h1>
+
+<form method="post" action="{% url 'Invoice/showInvoice' %}">
+    {% csrf_token %}
+    <pre>    Order Number:<input type="text" name="OrderNumber" >                                                 Invoice Number:<input type="text" name="InvoiceNumber"></pre>
+    Product Name:<textarea rows="2" cols="100" name="ProductName"></textarea><br>
+    <pre>Product Id:<input type="text" name="ProductId">    Quantity/kg:<input type="text" name="Quality"></pre><br>
+    Price:<input type="text" name="Price">
+    Size:
+    <select name="Size">
+        <option value="select">Select</option>
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+        <option value="xl">XL</option>
+        <option value="xxl">XXL</option>
+    </select><br>
+
+    <pre>   User Full Name:<input type="text" name="UserFullName">    Email:<input type="email" name="Email">    Contact Name:<input type="text" name="ContactNumber"></pre>
+
+    Address: <textarea rows="2" cols="120" name="Address"></textarea>
+    <pre>Shipping User Full Name:<input type="text" name="ShippingUserFullName">           Shipping User Contact No.:<input type="text" name="ShippingUserContactNumber"></pre>
+    <pre>City:<input type="type" name="City">     Country:<input type="text" name="Country"></pre>
+    Zip Code:<input type="text" name="ZipCode"><br>
+    <pre>Client GST:<input type="text" name="ClientGst">        Mod Of Payment:<input type="text" name="ModOfPayment"></pre><br>
+    <pre>Date and Time:<input type="date" name="Date">           Shipping Cost:<input type="text" name="ShippingCost"></pre><br>
+        <button>Save Link Now</button>
+</form>
+</center>
+{% endblock invoice %}

@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block editInvoice %}
+<center>
+<form method="POST" class="post-form" action="/update/{{ task.id }}">
+        {% csrf_token %}
+
+<br>
+
+    <center><h3>Update Details</h3></center>
+
+
+    <textarea type="text" name="sub" id="id_sub" required maxlength="20" rows="1" cols="100" placeholder="Title...">{{ task.sub }}</textarea><br><br>
+    <textarea type="text" name="dis" id="id_dis" required maxlength="100"  rows="12" cols="100" placeholder="Discription.....">{{ task.dis }}</textarea><br><br>
+    <pre>starting date:<input type="date" name="start_date" id="id_start_date" required maxlength="254" value="{{ task.start_date }}">        ending date:<input type="date" name="end_date" id="id_end_date" required maxlength="15" value="{{ task.end_date }}" ></pre>
+    <button type="submit" class="btn btn-success">Update</button>
+
+</form>
+</center>
+{% endblock editInvoice %}

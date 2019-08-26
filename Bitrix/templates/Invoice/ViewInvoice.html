@@ -1,0 +1,73 @@
+<html>
+<head>
+{% block ViewInvoicehead %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js" type="text/javasciptf"></script>
+{% endblock ViewInvoicehead %}
+ {% block ViewInvoice %}
+</head>
+
+<body onload="myfunction()"><h1>Order Details</h1>
+
+
+<pre >
+      <b>Order Number:</b>{{ task.OrderNumber }}
+      <b>Invoice Number:</b>{{ task.InvoiceNumber }}
+      <b>Product Name:</b>{{ task.ProductName }}
+      <b>Product Id:</b>{{ task.ProductId }}
+      <b>Quantity:</b>{{ task.Quality }}
+      <b>Price:</b>{{ task.Price }}
+      <b>Size:</b><a id="id_Size">{{ task.Size }}</a>
+      <b>User Full Name:</b>{{ task.UserFullName }}
+      <b>Email:</b>{{ task.Email }}
+      <b>Contact Number:</b>{{ task.ContactNumber }}
+      <b>Address:</b>{{ task.Address }}
+      <b>Shipping User Full Name:</b>{{ task.ShippingUserFullName }}
+      <b>Shipping User Contact Number:</b>{{ task.ShippingUserContactNumber }}
+      <b>City:</b>{{ task.City }}
+      <b>Country:</b>{{ task.Country }}
+      <b>Zip Code:</b>{{ task.ZipCode }}
+      <b>Client Gst:</b>{{ task.ClientGst }}
+      <b>Mod Of Payment:</b>{{ task.ModOfPayment }}
+      <b>Date and Time:</b> {{ task.Date }}
+      <b>Shipping Cost:</b>{{ task.ShippingCost }}
+    <p>
+      <b>Quantity:</b>{{ task.Quality }}
+      <b>Unit Price:</b>{{ UnitPrice }}
+      <b>CGST 5%:</b>{{ cgst }}
+      <b>SGST 9%:</b>{{ sgst }}
+      <b>Tax:</b>{{ Tax }}
+      <b>Amount:</b>{{ amount }}
+      <b>Shipping Cost:</b>{{ task.ShippingCost }}
+      <b>Grand Total:</b>{{ Total }}
+    </p>
+</pre>
+
+
+<script>
+
+   function myfunction(){
+    window.print();
+    }
+</script>
+
+</body>
+
+</html>
+
+
+
+
+<!--<pre>
+      <a href="/division/{{ task.id }}">
+            <input type="button" value="Unit Price">:{{ div }}
+      </a>
+      <a href="/addition/{{ task.id }}">
+            <input type="button" value="Grand Total">:{{ add }}
+      </a>
+</pre>-->
+
+
+
+
+{% endblock ViewInvoice %}

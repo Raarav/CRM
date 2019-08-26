@@ -1,0 +1,72 @@
+{% extends 'index.html' %}
+
+{% block showInvoice %}
+<center><a href="/invoice" class="btn btn-primary">Add New Record</a></center>
+<br>
+
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+    <tr>
+        <th>Action</th>
+        <th>Order Number</th>
+        <th>Invoice Number</th>
+        <th>Product Name</th>
+        <th>Product Id</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Size</th>
+        <th>User Full Name</th>
+        <th>Email</th>
+        <th>Contact Number</th>
+        <th>Address</th>
+        <th>Shipping User Full Name</th>
+        <th>Shipping User Contact Number</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Zip Code</th>
+        <th>Client Gst</th>
+        <th>Mod Of Payment</th>
+        <th>Date</th>
+        <th>Shipping Cost</th>
+
+    </tr>
+    </thead>
+    <tbody>
+{% for task in task %}
+    <tr>
+        <td>
+            <a href="/editInvoice/{{ task.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>
+            <a href="/deleteInvoice/{{ task.id }}">Delete</a>
+            <a href="/ViewInvoice/{{ task.id }}" >View</a>
+        </td>
+        <td>{{ task.OrderNumber }}</td>
+        <td>{{ task.InvoiceNumber }}</td>
+        <td>{{ task.ProductName }}</td>
+        <td>{{ task.ProductId }}</td>
+        <td>{{ task.Quality }}</td>
+        <td>{{ task.Price }}</td>
+        <td>{{ task.Size }}</td>
+        <td>{{ task.UserFullName }}</td>
+        <td>{{ task.Email }}</td>
+        <td>{{ task.ContactNumber }}</td>
+        <td>{{ task.Address }}</td>
+        <td>{{ task.ShippingUserFullName }}</td>
+        <td>{{ task.ShippingUserContactNumber }}</td>
+        <td>{{ task.City }}</td>
+        <td>{{ task.Country }}</td>
+        <td>{{ task.ZipCode }}</td>
+        <td>{{ task.ClientGst }}</td>
+        <td>{{ task.ModOfPayment }}</td>
+        <td>{{ task.Date }}</td>
+        <td>{{ task.ShippingCost }}</td>
+
+    </tr>
+{% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+
+
+
+{% endblock showInvoice  %}
